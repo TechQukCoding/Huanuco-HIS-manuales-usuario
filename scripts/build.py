@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Genera los PDF de los manuales.  Uso:  python scripts/build.py [CODIGO ...]
 Cada manual vive en content/<CODIGO>/ con manual.yml + capítulos .md (orden alfabético)."""
-import sys, re, pathlib, yaml, markdown, html
+import sys, re, pathlib, yaml, markdown, html, urllib.parse
 from jinja2 import Template
 from weasyprint import HTML
 
@@ -76,6 +76,21 @@ PLANTILLA = Template(r"""<!doctype html><html lang="es"><head><meta charset="utf
 </div></section>
 </body></html>""")
 
+PENDIENTES = []   # (manual, archivo, ruta, perfil, descripcion)
+
+def placeholder(nombre, ruta):
+    svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" font-family="Inter,Arial,sans-serif">'
+      '<rect width="1280" height="640" fill="#F4F6FB"/><rect width="230" height="640" fill="#fff"/>'
+      '<rect x="24" y="24" width="30" height="30" rx="6" fill="#7C6EFF"/><rect x="66" y="32" width="90" height="14" rx="4" fill="#C9CFEA"/>'
+      '<rect x="20" y="96" width="190" height="34" rx="8" fill="#ECE9FE"/><rect x="20" y="150" width="170" height="14" rx="4" fill="#E3E8F4"/>'
+      '<rect x="20" y="184" width="170" height="14" rx="4" fill="#E3E8F4"/><rect x="20" y="218" width="170" height="14" rx="4" fill="#E3E8F4"/>'
+      '<rect x="230" y="0" width="1050" height="64" fill="#fff"/><rect x="260" y="96" width="740" height="500" rx="14" fill="#fff" stroke="#E3E8F4"/>'
+      '<rect x="1030" y="96" width="220" height="500" rx="14" fill="#fff" stroke="#E3E8F4"/>'
+      '<rect x="380" y="250" width="520" height="56" rx="28" fill="#ECE9FE"/>'
+      '<text x="640" y="286" text-anchor="middle" font-size="24" font-weight="700" fill="#181980" letter-spacing="2">CAPTURA PENDIENTE</text>'
+      f'<text x="640" y="345" text-anchor="middle" font-size="20" fill="#5B5F8D">{html.escape(ruta or nombre)}</text></svg>')
+    return "data:image/svg+xml;utf8," + urllib.parse.quote(svg)
+
 def construir(carpeta: pathlib.Path):
     m = yaml.safe_load((carpeta / "manual.yml").read_text(encoding="utf8"))
     capitulos = []
@@ -96,13 +111,33 @@ def construir(carpeta: pathlib.Path):
     (ROOT / "dist").mkdir(exist_ok=True)
     (ROOT / f"dist/{m['codigo']}.html").write_text(out, encoding="utf8")
     # img/ de cada manual se resuelve respecto a su carpeta
-    out = out.replace('src="img/', f'src="content/{carpeta.name}/img/')
+    def resolver(mo):
+        tag = mo.group(0); ar = re.search(r'src="img/([^"]+)"', tag)
+        if not ar: return tag
+        archivo = ar.group(1); ruta = (re.search(r'data-ruta="([^"]*)"', tag) or [None, ""])[1]
+        perfil = (re.search(r'data-perfil="([^"]*)"', tag) or [None, ""])[1]
+        desc = (re.search(r'alt="([^"]*)"', tag) or [None, ""])[1]
+        real = carpeta / "img" / archivo
+        if real.exists():
+            return tag.replace('src="img/', f'src="content/{carpeta.name}/img/')
+        PENDIENTES.append((m["codigo"], archivo, ruta, perfil, desc))
+        return tag.replace(ar.group(0), f'src="{placeholder(archivo, ruta)}"')
+    out = re.sub(r"<img[^>]*>", resolver, out)
     pdf = ROOT / f"dist/{m['codigo']}.pdf"
     HTML(string=out, base_url=str(ROOT) + "/").write_pdf(pdf)
     print("OK", pdf.relative_to(ROOT))
+
+def escribir_pendientes():
+    L = ["# Capturas pendientes\n", "Generado por `scripts/build.py`. Guardar cada archivo en `content/<manual>/img/`.\n",
+         "| Manual | Archivo | Ruta | Perfil | Qué debe mostrar |", "|---|---|---|---|---|"]
+    for r in PENDIENTES: L.append("| " + " | ".join(x.replace("|", "/") for x in r) + " |")
+    (ROOT / "docs").mkdir(exist_ok=True)
+    (ROOT / "docs/capturas-pendientes.md").write_text("\n".join(L) + "\n", encoding="utf8")
+    print(f"Capturas pendientes: {len(PENDIENTES)} (docs/capturas-pendientes.md)")
 
 if __name__ == "__main__":
     pedidos = sys.argv[1:]
     for c in sorted((ROOT / "content").iterdir()):
         if (c / "manual.yml").exists() and (not pedidos or any(c.name.startswith(p) for p in pedidos)):
             construir(c)
+    escribir_pendientes()

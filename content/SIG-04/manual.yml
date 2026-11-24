@@ -1,0 +1,7 @@
+codigo: "SIG-04"
+titulo: "Mantenimiento y seguridad"
+subtitulo: "Roles del sistema, perfiles y usuarios, y los catálogos de Mantenimiento de SIGARH."
+publico: "Administradores del hospital en SIGARH (módulo Mantenimiento)."
+version: "0.9"
+estado: "Borrador para revisión. Contenido validado contra el código del sistema; capturas pendientes."
+modulos: ["Roles del sistema", "Perfiles de usuario", "Usuarios", "Departamentos y servicios", "Dependencias", "Tipos de trabajador y de guardia", "Horarios y guardias valorizadas", "Actividades", "Profesiones y grupos ocupacionales"]

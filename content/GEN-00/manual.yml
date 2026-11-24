@@ -1,0 +1,7 @@
+codigo: "GEN-00"
+titulo: "Acceso y uso general"
+subtitulo: "Cómo ingresar, moverse y administrar su cuenta en el ERP Hospitalario: paneles ERP, HIS y SIGARH."
+publico: "Todos los usuarios del sistema (administradores centrales, personal hospitalario y personal de SIGARH)."
+version: "0.9"
+estado: "Borrador para revisión. Contenido validado contra el código del sistema; capturas pendientes."
+modulos: ["Inicio de sesión", "Verificación en dos pasos", "Navegación", "Búsqueda y pendientes", "Mi perfil", "Firma electrónica", "Ajustes", "Cierre de sesión"]
