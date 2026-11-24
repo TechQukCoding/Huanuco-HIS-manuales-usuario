@@ -1,0 +1,21 @@
+# Mapa de los 18 manuales de usuario -> grupos de menú del ERP.
+# Los nombres salen literalmente de useHospitalNav.ts (his) y useSigarhNav.ts (sigarh).
+# scripts/cobertura.py comprueba que ningún grupo del ERP quede sin manual.
+GEN-00: {titulo: "Acceso y uso general", his: [], sigarh: [], admin: ["login", "perfil", "notificaciones", "landing"]}
+ERP-01: {titulo: "Administración central", his: [], sigarh: [], admin: ["escritorio", "hospital", "modulos", "usuarios", "reportes", "auditoria"]}
+SIG-01: {titulo: "RR. HH. y Movimientos", his: [], sigarh: ["Recursos Humanos", "Movimientos"]}
+SIG-02: {titulo: "Roles de turno", his: [], sigarh: ["Creacion de Roles", "Roles Pendientes", "Roles Aprobados"]}
+SIG-03: {titulo: "Infraestructura y configuración", his: [], sigarh: ["Infraestructura", "Infraestructura Hospitalaria", "Config. Farmacia", "Config. Financiera", "Laboratorio", "Imagenologia", "General"]}
+SIG-04: {titulo: "Mantenimiento y seguridad", his: [], sigarh: ["Mantenimiento"]}
+HIS-01: {titulo: "Admisión, Turnero y Referencias", his: ["Admisión", "Turnero", "Referencias", "Servicio Social"], sigarh: []}
+HIS-02: {titulo: "Consulta Externa, Telesalud y Procedimientos", his: ["Consulta Externa", "TeleSalud", "Procedimientos"], sigarh: []}
+HIS-03: {titulo: "Emergencia", his: ["Emergencia"], sigarh: []}
+HIS-04: {titulo: "Hospitalización y Cuidados Intensivos", his: ["Hospitalizacion", "Seguimiento", "Cuidados Intensivos"], sigarh: []}
+HIS-05: {titulo: "Áreas quirúrgicas y de apoyo", his: ["Centro Quirúrgico", "Centro Obstétrico", "Central de Esterilización", "Anatomía Patológica"], sigarh: []}
+HIS-06: {titulo: "Servicios especializados", his: ["Hemodialisis", "Banco de Sangre", "Medicina Fisica", "Salud Ambiental"], sigarh: []}
+HIS-07: {titulo: "Laboratorio e Imágenes", his: ["Laboratorio", "Imagenes"], sigarh: []}
+HIS-08: {titulo: "Farmacia", his: ["Farmacia"], sigarh: []}
+HIS-09: {titulo: "Caja, Facturación y SIS", his: ["Caja", "Facturación", "Fact - Config", "SIS"], sigarh: []}
+HIS-10: {titulo: "Informes, Epidemiología y Registro HIS", his: ["Informes", "Epidemiologia", "HIS"], sigarh: []}
+HIS-11: {titulo: "Archivo Clínico, Firma y Administración del HIS", his: ["Archivo Clinico", "Firma Electronica", "Seguridad", "General", "Auditoria"], sigarh: []}
+NUT-01: {titulo: "Nutrición y Dietética", his: ["Nutrición y Dietética"], sigarh: ["Nutricion"]}

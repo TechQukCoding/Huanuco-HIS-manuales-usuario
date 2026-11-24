@@ -1,0 +1,10 @@
+# Datos que cambian de un hospital a otro. Editar solo aquí.
+producto: "ERP Hospitalario"
+proveedor: "Techquk"
+cliente: "Hospital de Nivel II – Huánuco"
+version_sistema: "1.0"
+fecha_edicion: "2026-11"
+contacto:
+  correo: "ventas@techquk.com"
+  web: "www.techquk.com"
+  direccion: "Calle Los Sauces 787, Urb. Santa Victoria, Chiclayo – Perú"

@@ -1,0 +1,7 @@
+codigo: "ERP-01"
+titulo: "Administración central"
+subtitulo: "Manual de usuario del panel ERP: hospitales, usuarios, módulos, reportes y auditoría."
+publico: "Administradores centrales del sistema (panel /admin)."
+version: "0.1"
+estado: "MUESTRA DE ESTILO — contenido preliminar, pendiente de validar con capturas reales."
+modulos: ["Escritorio", "Datos del hospital", "Módulos", "Usuarios y administradores", "Reportes", "Auditoría"]
