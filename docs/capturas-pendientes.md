@@ -45,6 +45,11 @@ Generado por `scripts/build.py`. Guardar cada archivo en `content/<manual>/img/`
 | HIS-04 | hosp-expediente.png | /app/hospitalizacion/expediente/[id] | Médico (datos de prueba) | Expediente de hospitalización |
 | HIS-04 | hosp-consentimientos.png | /app/hospitalizacion/consentimientos | Médico (datos de prueba) | Consentimientos informados |
 | HIS-04 | uci-camas.png | /app/uci/camas | Médico o enfermería (datos de prueba) | Camas críticas |
+| HIS-05 | cq-solicitudes.png | /app/centro-quirurgico/solicitudes | Cirujano (datos de prueba) | Solicitudes quirúrgicas |
+| HIS-05 | cq-cirugia.png | /app/centro-quirurgico/cirugia/[id] | Cirujano (datos de prueba) | Detalle de una cirugía |
+| HIS-05 | co-atenciones.png | /app/centro-obstetrico/atenciones | Obstetra (datos de prueba) | Atenciones obstétricas |
+| HIS-05 | est-proceso.png | /app/central-esterilizacion/proceso | Personal de esterilización (datos de prueba) | Proceso de esterilización |
+| HIS-05 | pat-casos.png | /app/anatomia-patologica/casos | Patólogo (datos de prueba) | Casos de patología |
 | SIG-01 | rrhh-empleados-listado.png | /sigarh/rrhh/empleados | Personal de RR. HH. (datos de prueba) | Listado de empleados |
 | SIG-01 | rrhh-empleado-paso1.png | /sigarh/rrhh/empleados/create | Personal de RR. HH. (datos de prueba) | Alta de empleado, paso Datos personales |
 | SIG-01 | rrhh-especialidades.png | /sigarh/rrhh/especialidades | Personal de RR. HH. (datos de prueba) | Especialidades y subespecialidades |

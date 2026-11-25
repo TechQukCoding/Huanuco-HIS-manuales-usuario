@@ -57,4 +57,10 @@ Todo lo redactado se verificó leyendo el código del ERP. Estos puntos dependen
 | 51 | HIS-04 §5 | Seguimiento, Censo, Consentimientos e Interconsultas se describieron por sus filtros y formularios; falta ver sus columnas exactas con datos. | Capturas reales. |
 | 52 | HIS-04 §6.4 | El detalle del ingreso a UCI tiene muchas secciones; las opciones exactas de *Soporte* y de *Concepto* del balance se resumieron. | Abrir un ingreso de prueba. |
 | 53 | HIS-04 §6 | Confirmar que el rol de enfermería puede registrar los controles de UCI (solo se vio la restricción de las notas de hospitalización). | Probar con la cuenta de enfermería. |
+| 54 | HIS-05 §3.1 | El backend exige que las evaluaciones estén marcadas *apto*, pero no vi la etiqueta exacta de ese campo en el formulario. | Abrir una cirugía de prueba. |
+| 55 | HIS-05 §2.4 | No vi el contenido por defecto de los ítems de la lista de verificación (fases Entrada, Pausa y Salida). | Captura real de la configuración. |
+| 56 | HIS-05 §5.1 | Los métodos de esterilización disponibles (solo se menciona el vapor por la prueba de Bowie-Dick). | Abrir *Nuevo equipo*. |
+| 57 | HIS-05 §4.4 | Falta verificar si al derivar a cesárea se crea sola la solicitud en Centro Quirúrgico o hay que registrarla a mano. | Probar la derivación con datos de prueba. |
+| 58 | HIS-05 §6.2 | Opciones y obligatoriedad del campo *Autorización* (familiar, fiscal u otra) en las solicitudes de necropsia. | Abrir *Nueva solicitud*. |
+| 59 | HIS-05 §3.2 | Etiquetas exactas de los seis momentos del acto (ingreso a sala, inicio de anestesia, incisión, cierre, fin de anestesia, salida de sala) en pantalla. | Captura real. |
 

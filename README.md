@@ -53,7 +53,8 @@ GEN-00 · ERP-01 · SIG-01…04 · HIS-01…11 · NUT-01 (ver `config/manuales.y
 | HIS-02 Consulta Externa, Telesalud y Procedimientos | Borrador 0.9 · 27 págs · validado contra el código · capturas pendientes |
 | HIS-03 Emergencia | Borrador 0.9 · 16 págs · validado contra el código · capturas pendientes |
 | HIS-04 Hospitalización y Cuidados Intensivos | Borrador 0.9 · 18 págs · validado contra el código · capturas pendientes |
-| Resto (8 manuales) | Pendiente |
+| HIS-05 Áreas quirúrgicas y de apoyo | Borrador 0.9 · 20 págs · validado contra el código · capturas pendientes |
+| Resto (7 manuales) | Pendiente |
 
 Capturas por tomar: `docs/capturas-pendientes.md` (se regenera con `build.py`). Cómo tomarlas: `scripts/capturas/README.md`.
 Puntos por confirmar con la app corriendo: `docs/pendientes-de-validacion.md`.

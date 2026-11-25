@@ -1,0 +1,7 @@
+codigo: "HIS-05"
+titulo: "Áreas quirúrgicas y de apoyo"
+subtitulo: "Centro Quirúrgico, Centro Obstétrico, Central de Esterilización y Anatomía Patológica."
+publico: "Cirujanos, anestesiólogos, obstetras, personal de sala, esterilización y patología."
+version: "0.9"
+estado: "Borrador para revisión. Contenido validado contra el código del sistema; capturas pendientes."
+modulos: ["Solicitudes y programación de quirófano", "Acto quirúrgico y anestesia", "Recuperación", "Centro Obstétrico", "Central de Esterilización", "Anatomía Patológica"]
