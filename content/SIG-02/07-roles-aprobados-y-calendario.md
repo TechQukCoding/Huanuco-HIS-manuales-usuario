@@ -11,6 +11,10 @@ Ruta: **SIGARH › Roles Aprobados › Roles Aprobados** (*Programación autoriz
 - **Tabla:** Servicio, Período, Modalidad, Personal y **Aprobado por**.
 - **Ver** abre la programación autorizada y desde allí se puede **Solicitar incorporación** (capítulo 6). **Ver calendario de turnos** abre el calendario.
 
+### Detalle de un rol aprobado
+
+Al pulsar **Ver** se abre el rol. Arriba aparecen el servicio, la leyenda *Programación autorizada* y el botón **Solicitar incorporación**. Debajo se muestran la **Modalidad**, el **Departamento**, el **Servicio** y el **Período**; el resumen (*N personal · N actividades · N turnos*); quién lo **creó** y quién lo **revisó**, con sus fechas; y, en **Personal programado**, cada empleado con sus actividades y turnos (horario y días, por ejemplo *Lun Mié Vie*).
+
 ## 7.2 Calendario de turnos
 
 Ruta: **Roles Aprobados › Calendario de Turnos** (*Personal programado por servicio y turno según los roles aprobados*).
