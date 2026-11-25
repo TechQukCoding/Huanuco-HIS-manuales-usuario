@@ -229,7 +229,8 @@ def main():
     L = ["# Resultado de la última captura\n", "| Manual | Archivo | Resultado |", "|---|---|---|"]
     for f, e in resultado: L.append(f"| {f['manual']} | {f['archivo']} | {'OK' if not e else e} |")
     (ROOT / "docs/capturas-resultado.md").write_text("\n".join(L) + "\n", encoding="utf8")
-    print(f"\n{sum(1 for _, e in resultado if not e or e.startswith("REVISAR"))} de {len(resultado)} capturas tomadas. Detalle en docs/capturas-resultado.md")
+    tomadas = sum(1 for _, e in resultado if not e or e.startswith("REVISAR"))
+    print(f"\n{tomadas} de {len(resultado)} capturas tomadas. Detalle en docs/capturas-resultado.md")
 
 
 if __name__ == "__main__":
