@@ -1,0 +1,30 @@
+# Configuración del script de capturas (scripts/capturas/capturar.py).
+# NUNCA escriba contraseñas aquí: se leen de variables de entorno.
+
+base_url: "http://localhost:3000"      # dirección de la aplicación con datos de prueba
+viewport: {ancho: 1440, alto: 900}
+pausa_ms: 900                          # espera extra tras cargar cada pantalla
+
+# Una cuenta de prueba por panel (puede ser una con todos los módulos).
+# Variables de entorno necesarias:
+#   CAP_ADMIN_USER, CAP_ADMIN_PASS, CAP_ADMIN_TOTP   (secreto TOTP del administrador de prueba)
+#   CAP_SIGARH_USER, CAP_SIGARH_PASS
+#   CAP_HIS_USER,   CAP_HIS_PASS
+paneles:
+  admin:  {login: "/admin/login",  prefijo: "/admin",  env: "CAP_ADMIN"}
+  sigarh: {login: "/sigarh/login", prefijo: "/sigarh", env: "CAP_SIGARH"}
+  his:    {login: "/app/login",    prefijo: "/app",    env: "CAP_HIS"}
+
+# Capturas que no necesitan sesión (se toman sin iniciar sesión).
+sin_sesion: ["gen-login-his.png", "gen-login-erp-mfa-qr.png"]
+
+# Capturas con enlace propio. Las pantallas con [id] necesitan un registro real:
+# pegue aquí la dirección concreta (con el id de un registro de PRUEBA).
+# Si no se indica, el script abre la lista y entra al primer registro.
+rutas:
+  # "ce-atencion-editor.png": "/app/consulta-externa/atenciones-medicas/00000000-0000-0000-0000-000000000000"
+  # "roles-editor.png": "/sigarh/creacion-roles/medicos/ordinario/00000000-0000-0000-0000-000000000000"
+
+# Pasos extra antes de capturar (opcional): hacer clic en un texto visible.
+clics:
+  # "mant-perfil-crear.png": ["Nuevo perfil"]
