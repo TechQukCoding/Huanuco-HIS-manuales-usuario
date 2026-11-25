@@ -18,13 +18,20 @@ paneles:
 # Capturas que no necesitan sesión (se toman sin iniciar sesión).
 sin_sesion: ["gen-login-his.png", "gen-login-erp-mfa-qr.png"]
 
+# Cuentas del HIS por perfil (las crea scripts.seed_datos_prueba; contraseña = CAP_HIS_PASS).
+# Si el perfil de la captura contiene la palabra, se usa esa cuenta; si no, CAP_HIS_USER (Jefatura).
+cuentas_his:
+  "Médico": "medico.interna@prueba.huanuco.techquk.com"
+  "Enfermería": "enfermera.flores@prueba.huanuco.techquk.com"
+  "admisión": "admision.chavez@prueba.huanuco.techquk.com"
+
 # Capturas con enlace propio. Las pantallas con [id] necesitan un registro real:
 # pegue aquí la dirección concreta (con el id de un registro de PRUEBA).
 # Si no se indica, el script abre la lista y entra al primer registro.
-rutas:
+rutas: {}
   # "ce-atencion-editor.png": "/app/consulta-externa/atenciones-medicas/00000000-0000-0000-0000-000000000000"
   # "roles-editor.png": "/sigarh/creacion-roles/medicos/ordinario/00000000-0000-0000-0000-000000000000"
 
 # Pasos extra antes de capturar (opcional): hacer clic en un texto visible.
-clics:
+clics: {}
   # "mant-perfil-crear.png": ["Nuevo perfil"]

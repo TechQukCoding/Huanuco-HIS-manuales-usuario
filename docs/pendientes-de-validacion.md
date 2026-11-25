@@ -45,4 +45,7 @@ Todo lo redactado se verificó leyendo el código del ERP. Estos puntos dependen
 | 39 | HIS-02 §7.1 | Los nombres exactos de las tres listas de la Bandeja electrónica se infirieron de sus mensajes vacíos. | Captura real. |
 | 40 | HIS-02 §8.4 | Cuándo se habilita el botón *Programar* de una solicitud de telesalud (depende de que exista una cita virtual del paciente por enlazar). | Probar con datos de prueba. |
 | 41 | HIS-02 §4 | Los destinos *Alta* y *Referencia* y sus efectos sobre otros módulos (Admisión, Referencias) se validaron en backend; falta probar el recorrido completo. | Atender una consulta de prueba de principio a fin. |
+| 42 | Entorno | **Mejora para desarrollo**: el backend declara `sqlalchemy` sin `greenlet`/`sqlalchemy[asyncio]`; en algunos equipos Windows `pip install -e ".[dev]"` no lo instala y `alembic` falla. | Instalación limpia en Windows. |
+| 43 | Entorno | **Mejora para desarrollo**: `npm install` falla con `ERESOLVE` (conflicto de pares entre `@pinia/nuxt` y `@pinia-plugin-persistedstate/nuxt`); funciona con `--legacy-peer-deps`. Sugerido: `.npmrc` con `legacy-peer-deps=true`. | `npm install` en limpio. |
+| 44 | Datos de prueba | **Choque de scripts**: `scripts.demo_sigarh` etapa `renombrar` falla (`uq_mant_perfiles_usuario_nombre`) porque la instalación del hospital ya crea los perfiles con nombre limpio (*Médico asistencial*, etc.) además de los *(prueba)* de `seed_datos_prueba`. Se omitió esa etapa (`--solo configuracion rrhh roles nutricion`). | Instalar un hospital nuevo y correr los tres scripts en orden. |
 

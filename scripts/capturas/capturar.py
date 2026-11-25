@@ -36,19 +36,40 @@ def panel_de(ruta):
     return None
 
 
-def credenciales(panel):
+def normalizar_totp(valor):
+    """Quita espacios y guiones y valida que sea una clave base32 (A-Z y 2-7)."""
+    clave = re.sub(r"[\s\-]", "", valor or "").upper()
+    if not re.fullmatch(r"[A-Z2-7]{16,}", clave):
+        sys.exit("CAP_ADMIN_TOTP no es una clave válida. Copie la 'clave manual' que aparece bajo el código QR del MFA "
+                 "(solo letras A-Z y números 2-7; no use el texto de ejemplo).")
+    return clave
+
+
+def cuenta_para(panel, perfil):
+    """Usuario a usar: para el HIS, la cuenta del perfil si existe en config; si no, la de CAP_HIS_USER."""
     pre = CFG["paneles"][panel]["env"]
-    usr, pwd = os.environ.get(pre + "_USER"), os.environ.get(pre + "_PASS")
+    usr = os.environ.get(pre + "_USER")
+    if panel == "his":
+        for clave, correo in (CFG.get("cuentas_his") or {}).items():
+            if clave.lower() in (perfil or "").lower():
+                return correo
+    return usr
+
+
+def credenciales(panel, usuario=None):
+    pre = CFG["paneles"][panel]["env"]
+    usr, pwd = usuario or os.environ.get(pre + "_USER"), os.environ.get(pre + "_PASS")
     if not usr or not pwd:
         sys.exit(f"Faltan las variables de entorno {pre}_USER y {pre}_PASS (cuenta de PRUEBA del panel {panel}).")
-    return usr, pwd, os.environ.get(pre + "_TOTP")
+    totp = os.environ.get(pre + "_TOTP")
+    return usr, pwd, (normalizar_totp(totp) if (panel == "admin" and totp) else totp)
 
 
-def iniciar_sesion(pw, browser, panel):
+def iniciar_sesion(pw, browser, panel, usuario=None):
     from playwright.sync_api import TimeoutError as PWTimeout
     ctx = browser.new_context(viewport={"width": CFG["viewport"]["ancho"], "height": CFG["viewport"]["alto"]}, locale="es-PE")
     page = ctx.new_page()
-    usr, pwd, totp = credenciales(panel)
+    usr, pwd, totp = credenciales(panel, usuario)
     page.goto(CFG["base_url"] + CFG["paneles"][panel]["login"])
     page.get_by_label(re.compile("correo", re.I)).first.fill(usr)
     page.get_by_label(re.compile("contraseña", re.I)).first.fill(pwd)
@@ -75,7 +96,7 @@ def iniciar_sesion(pw, browser, panel):
 
 def resolver_ruta(page, fila):
     """Devuelve la dirección final. Para rutas con [id] usa el override de config o entra al primer registro."""
-    ruta = CFG.get("rutas", {}).get(fila["archivo"]) or fila["ruta"]
+    ruta = (CFG.get("rutas") or {}).get(fila["archivo"]) or fila["ruta"]
     if "[id]" not in ruta:
         return ruta
     lista = re.sub(r"/\[id\].*$", "", ruta)
@@ -96,7 +117,7 @@ def capturar(page, fila, destino):
     if not page.url.endswith(ruta):
         page.goto(CFG["base_url"] + ruta)
     page.wait_for_load_state("networkidle")
-    for texto in CFG.get("clics", {}).get(fila["archivo"], []) or []:
+    for texto in (CFG.get("clics") or {}).get(fila["archivo"]) or []:
         page.get_by_text(texto, exact=False).first.click()
         page.wait_for_load_state("networkidle")
     page.wait_for_timeout(CFG.get("pausa_ms", 900))
@@ -129,12 +150,22 @@ def main():
         browser = pw.chromium.launch(headless=not a.headed)
         publico = browser.new_context(viewport={"width": CFG["viewport"]["ancho"], "height": CFG["viewport"]["alto"]}, locale="es-PE")
         for f in filas:
-            panel = None if f["archivo"] in CFG.get("sin_sesion", []) else panel_de(f["ruta"])
+            panel = None if f["archivo"] in (CFG.get("sin_sesion") or []) else panel_de(f["ruta"])
             if f["perfil"].lower().startswith("administrador sin mfa"):
                 resultado.append((f, "tome esta captura a mano (cuenta sin MFA configurado)")); continue
-            if panel and panel not in sesiones:
-                sesiones[panel] = iniciar_sesion(pw, browser, panel)
-            ctx = sesiones[panel] if panel else publico
+            usuario = cuenta_para(panel, f["perfil"]) if panel else None
+            clave_ses = (panel, usuario)
+            if panel and clave_ses not in sesiones:
+                try:
+                    sesiones[clave_ses] = iniciar_sesion(pw, browser, panel, usuario)
+                except SystemExit as e:        # login imposible: se anota y se sigue con otros paneles
+                    sesiones[clave_ses] = None
+                    sesiones[(clave_ses, "motivo")] = str(e)
+            if panel and sesiones.get(clave_ses) is None:
+                resultado.append((f, "sin sesión: " + sesiones.get((clave_ses, "motivo"), "login falló")))
+                print("FALLO", f["manual"], f["archivo"], "(no se pudo iniciar sesión)")
+                continue
+            ctx = sesiones[clave_ses] if panel else publico
             page = ctx.new_page()
             destino = ROOT / "content" / f["manual"] / "img" / f["archivo"]
             try:
