@@ -87,22 +87,31 @@ def iniciar_sesion(pw, browser, panel, usuario=None):
     page.get_by_label(re.compile("contraseña", re.I)).first.fill(pwd)
     page.get_by_role("button", name=re.compile("iniciar sesión|ingresar", re.I)).first.click()
     if panel == "admin":
-        # Verificación en dos pasos: seis casillas; la primera ya tiene el foco y se envía sola al completar la sexta.
+        # El ERP puede (a) entrar directo (MFA desactivado en pruebas), (b) pedir el código de seis casillas,
+        # o (c) pedir configurar el MFA. Se espera a ver cuál ocurre.
         casilla = page.locator('input[autocomplete="one-time-code"], input[inputmode="numeric"], input[type="number"]').first
-        try:
-            casilla.wait_for(state="visible", timeout=10000)
-        except PWTimeout:
+        modo = None
+        for _ in range(60):                                  # hasta ~15 s
+            if "login" not in page.url:
+                modo = "directo"; break
+            if casilla.count() and casilla.is_visible():
+                modo = "codigo"; break
             if page.get_by_role("button", name=re.compile("ya la tengo", re.I)).count():
-                sys.exit(volcar_diagnostico(page, panel, "La cuenta del ERP aún no tiene MFA configurado: configúrelo una vez a mano y guarde la clave manual."))
-            sys.exit(volcar_diagnostico(page, panel, "No apareció la pantalla del código MFA (¿contraseña incorrecta?)."))
-        if not totp:
-            sys.exit("El panel ERP pide MFA: defina CAP_ADMIN_TOTP (la clave manual del MFA de la cuenta de prueba).")
-        import pyotp
-        resta = 30 - (time.time() % 30)
-        if resta < 3:                       # no usar un código a punto de vencer
-            time.sleep(resta + 0.5)
-        casilla.click()
-        page.keyboard.type(pyotp.TOTP(totp).now(), delay=90)
+                modo = "configurar"; break
+            page.wait_for_timeout(250)
+        if modo == "configurar":
+            sys.exit(volcar_diagnostico(page, panel, "La cuenta del ERP aún no tiene MFA configurado: confírmelo una vez a mano (o desactive el MFA en su entorno de pruebas)."))
+        if modo is None:
+            sys.exit(volcar_diagnostico(page, panel, "El ERP no respondió tras escribir la contraseña (¿credenciales incorrectas o bloqueo por intentos?)."))
+        if modo == "codigo":
+            if not totp:
+                sys.exit("El panel ERP pide MFA: defina CAP_ADMIN_TOTP (la clave manual del MFA de la cuenta de prueba).")
+            import pyotp
+            resta = 30 - (time.time() % 30)
+            if resta < 3:                                    # no usar un código a punto de vencer
+                time.sleep(resta + 0.5)
+            casilla.click()
+            page.keyboard.type(pyotp.TOTP(totp).now(), delay=90)
     try:
         page.wait_for_url(lambda u: "login" not in u, timeout=20000)
     except PWTimeout:
