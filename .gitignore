@@ -3,4 +3,4 @@ __pycache__/
 .venv/
 dist/
 config/capturas.local.yml
-docs/debug-login-*.png
+docs/debug-*.png

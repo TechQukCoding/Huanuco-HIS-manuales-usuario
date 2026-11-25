@@ -150,12 +150,23 @@ def capturar(page, fila, destino):
     if not page.url.endswith(ruta):
         page.goto(CFG["base_url"] + ruta)
     page.wait_for_load_state("networkidle")
+    from playwright.sync_api import TimeoutError as PWTimeout
+    avisos = []
     for texto in (CFG.get("clics") or {}).get(fila["archivo"]) or []:
-        page.get_by_text(texto, exact=False).first.click()
-        page.wait_for_load_state("networkidle")
+        try:
+            page.get_by_role("button", name=re.compile(re.escape(texto), re.I)).first.click(timeout=10000)
+            page.wait_for_load_state("networkidle")
+        except PWTimeout:
+            avisos.append(f"no se encontró el botón «{texto}»")
     page.wait_for_timeout(CFG.get("pausa_ms", 900))
     destino.parent.mkdir(parents=True, exist_ok=True)
     page.screenshot(path=str(destino), full_page=False)
+    if avisos:   # la captura se guardó igual; se marca para que se revise
+        try:
+            texto_pantalla = " ".join(page.inner_text("body").split())[:250]
+        except Exception:
+            texto_pantalla = ""
+        return "REVISAR: " + "; ".join(avisos) + f". Texto en pantalla: {texto_pantalla}"
     return None
 
 
@@ -205,14 +216,20 @@ def main():
                 err = capturar(page, f, destino)
             except Exception as e:                      # una captura fallida no detiene al resto
                 err = f"{type(e).__name__}: {str(e)[:120]}"
+                try:
+                    (ROOT / "docs").mkdir(exist_ok=True)
+                    page.screenshot(path=str(ROOT / "docs" / ("debug-" + f["archivo"])))
+                    err += f" (imagen: docs/debug-{f['archivo']})"
+                except Exception:
+                    pass
             page.close()
             resultado.append((f, err))
-            print(("OK   " if not err else "FALLO"), f["manual"], f["archivo"], err or "")
+            print(("OK   " if not err else ("AVISO" if err.startswith("REVISAR") else "FALLO")), f["manual"], f["archivo"], err or "")
         browser.close()
     L = ["# Resultado de la última captura\n", "| Manual | Archivo | Resultado |", "|---|---|---|"]
     for f, e in resultado: L.append(f"| {f['manual']} | {f['archivo']} | {'OK' if not e else e} |")
     (ROOT / "docs/capturas-resultado.md").write_text("\n".join(L) + "\n", encoding="utf8")
-    print(f"\n{sum(1 for _, e in resultado if not e)} de {len(resultado)} capturas tomadas. Detalle en docs/capturas-resultado.md")
+    print(f"\n{sum(1 for _, e in resultado if not e or e.startswith("REVISAR"))} de {len(resultado)} capturas tomadas. Detalle en docs/capturas-resultado.md")
 
 
 if __name__ == "__main__":
