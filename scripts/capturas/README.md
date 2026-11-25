@@ -42,3 +42,13 @@ Imprime tres líneas para `config/capturas.local.yml`. Es seguro repetirlo. Para
 docker exec -e PGPASSWORD=erp_password erp_postgres psql -U erp_user -d his_prueba -c "delete from admisiones_emergencia where numero_cuenta like 'EME-PRUEBA-%'"
 ```
 
+## Datos de Hospitalización para las capturas de HIS-04
+Crea un paciente internado ficticio, con órdenes, kardex, plan de cuidados, balance y notas:
+```
+docker exec -i -e PGPASSWORD=erp_password erp_postgres psql -U erp_user -d his_prueba < scripts\capturas\datos_hospitalizacion_prueba.sql
+```
+Imprime la línea `hosp-expediente.png` para `config/capturas.local.yml`. Es seguro repetirlo. Ocupa una cama libre de una sala GENERAL; para deshacerlo, dar de alta al paciente de prueba desde la aplicación o ejecutar:
+```
+docker exec -e PGPASSWORD=erp_password erp_postgres psql -U erp_user -d his_prueba -c "update sigarh_camas set estado='DISPONIBLE' where id=(select cama_id from hospitalizaciones where numero_hospitalizacion='HOSP-PRUEBA-0001'); delete from hospitalizaciones where numero_hospitalizacion='HOSP-PRUEBA-0001'"
+```
+
