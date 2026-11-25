@@ -33,6 +33,11 @@ Generado por `scripts/build.py`. Guardar cada archivo en `content/<manual>/img/`
 | SIG-02 | aprobados-solicitar.png | /sigarh/roles-aprobados/[id] | Elaborador de roles (datos de prueba) | Solicitud de incorporación de personal |
 | SIG-02 | aprobados-lista.png | /sigarh/roles-aprobados | Cualquier usuario con acceso (datos de prueba) | Lista de roles aprobados |
 | SIG-02 | aprobados-calendario.png | /sigarh/roles-aprobados/calendario | Cualquier usuario con acceso (datos de prueba) | Calendario de turnos |
+| SIG-03 | infra-catalogos.png | /sigarh/infraestructura/catalogos | Administrador SIGARH (datos de prueba) | Catálogos de infraestructura |
+| SIG-03 | infra-salas.png | /sigarh/infraestructura-hosp/salas | Administrador SIGARH (datos de prueba) | Lista de salas |
+| SIG-03 | farm-almacenes.png | /sigarh/config-farmacia/almacenes | Administrador SIGARH (datos de prueba) | Almacenes y farmacias |
+| SIG-03 | fin-tarifario.png | /sigarh/config-financiera/tarifario | Administrador SIGARH (datos de prueba) | Tarifario |
+| SIG-03 | lab-examen-nuevo.png | /sigarh/laboratorio/examenes/create | Administrador SIGARH (datos de prueba) | Nuevo examen de laboratorio |
 | SIG-04 | mant-lista-generica.png | /sigarh/mantenimiento/profesiones | Administrador SIGARH (datos de prueba) | Lista de Mantenimiento con indicadores, búsqueda y pestañas |
 | SIG-04 | mant-rol-crear.png | /sigarh/mantenimiento/roles-sistema/create | Administrador SIGARH con Administrar Seguridad (datos de prueba) | Formulario Crear rol del sistema |
 | SIG-04 | mant-perfil-crear.png | /sigarh/mantenimiento/perfiles-usuario/create | Administrador SIGARH con Administrar Seguridad (datos de prueba) | Formulario Nuevo perfil de usuario |

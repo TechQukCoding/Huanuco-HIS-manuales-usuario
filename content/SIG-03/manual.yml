@@ -1,0 +1,7 @@
+codigo: "SIG-03"
+titulo: "Infraestructura y configuración"
+subtitulo: "Catálogos, consultorios, pisos, salas y camas, y la configuración de farmacia, finanzas, laboratorio, imagenología y datos generales en SIGARH."
+publico: "Administradores del hospital que configuran la infraestructura y los catálogos que usa el HIS."
+version: "0.9"
+estado: "Borrador para revisión. Contenido validado contra el código del sistema; capturas pendientes."
+modulos: ["Catálogos y consultorios", "Pisos, salas y camas", "Almacenes y medicamentos", "Seguros, cajas y tarifario", "Exámenes de laboratorio e imagenología", "CIE-10, paquetes y tiempos"]

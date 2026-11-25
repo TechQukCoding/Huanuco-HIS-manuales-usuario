@@ -28,4 +28,10 @@ Todo lo redactado se verificó leyendo el código del ERP. Estos puntos dependen
 | 22 | SIG-02 §7.2 | Significado exacto de la marca *Rol pendiente de aprobación* en el calendario de turnos. | Captura real con un rol pendiente. |
 | 23 | SIG-02 §2.1 | El motivo del rechazo se muestra al pasar el cursor sobre el estado en la lista (atributo `title`); confirmar que es visible en pantallas táctiles. | Probar en móvil. |
 | 24 | SIG-02 §5.3 | Reglas de aprobación leídas en `puede_aprobar_roles` (permiso + jefe de servicio o alcance global); falta confirmar el caso de un revisor sin jefatura con alcance global apagado. | Probar con un revisor de prueba. |
+| 25 | SIG-03 §2.1 | Los nombres de las 17 categorías de Catálogos se tomaron de sus claves en el backend; confirmar cómo las muestra la pantalla. | Captura real del selector de categorías. |
+| 26 | SIG-03 §4.2 | La columna *Marcas* del listado de medicamentos no se documentó: no se vio de dónde sale. | Abrir un producto con marcas. |
+| 27 | SIG-03 §5.1 | El backend puede crear seguros estándar por su cuenta (`asegurar_seguros_estandar`); confirmar y documentar cuáles. | Revisar los seguros de un hospital nuevo. |
+| 28 | SIG-03 §5.3 | Qué tipos de servicio Caja no cobra automáticamente (marca `caja: false` en el formulario de tarifas). | Revisar `TarifaForm.vue` con desarrollo. |
+| 29 | SIG-03 §5.2 | Los campos de *Cajas* no muestran marca de obligatorio; confirmar la validación del backend. | Intentar crear una caja vacía. |
+| 30 | SIG-03 §7.1 | La API del CIE-10 admite crear, editar y eliminar, pero la pantalla es solo de consulta. Confirmar que es lo previsto. | Consultar con desarrollo. |
 
