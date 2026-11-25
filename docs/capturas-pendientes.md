@@ -18,6 +18,15 @@ Generado por `scripts/build.py`. Guardar cada archivo en `content/<manual>/img/`
 | GEN-00 | gen-perfil-erp.png | /admin/perfil | Administrador (datos de prueba) | Mi perfil en el ERP |
 | GEN-00 | gen-perfil-his-firma.png | /app/perfil | Médico con empleado vinculado (datos de prueba) | Firma electrónica y PIN en Mi perfil |
 | GEN-00 | gen-ajustes-his.png | /app/ajustes | Usuario con acceso a catálogos (datos de prueba) | Pantalla de ajustes del Panel Hospitalario |
+| HIS-01 | adm-pacientes-listado.png | /app/admision/pacientes | Personal de admisión (datos de prueba) | Directorio de pacientes |
+| HIS-01 | adm-paciente-registrar.png | /app/admision/pacientes/create | Personal de admisión (datos de prueba) | Registrar paciente |
+| HIS-01 | adm-agendamiento.png | /app/admision/agendamiento | Personal de admisión (datos de prueba) | Agendamiento de citas |
+| HIS-01 | adm-citados.png | /app/admision/citados | Personal de admisión (datos de prueba) | Pacientes citados |
+| HIS-01 | adm-programacion-listado.png | /app/admision/programacion-medica | Personal de admisión (datos de prueba) | Programación médica |
+| HIS-01 | adm-lista-espera.png | /app/admision/lista-espera | Personal de admisión (datos de prueba) | Lista de espera |
+| HIS-01 | turnero-emision.png | /app/turnero/emision | Personal de admisión (datos de prueba) | Emisión de tickets |
+| HIS-01 | ref-lista.png | /app/referencias/referencias | Personal con acceso a Referencias (datos de prueba) | Lista de referencias |
+| HIS-01 | ss-evaluacion.png | /app/servicio-social/servicio-social | Trabajador social (datos de prueba) | Nueva evaluación social |
 | SIG-01 | rrhh-empleados-listado.png | /sigarh/rrhh/empleados | Personal de RR. HH. (datos de prueba) | Listado de empleados |
 | SIG-01 | rrhh-empleado-paso1.png | /sigarh/rrhh/empleados/create | Personal de RR. HH. (datos de prueba) | Alta de empleado, paso Datos personales |
 | SIG-01 | rrhh-especialidades.png | /sigarh/rrhh/especialidades | Personal de RR. HH. (datos de prueba) | Especialidades y subespecialidades |

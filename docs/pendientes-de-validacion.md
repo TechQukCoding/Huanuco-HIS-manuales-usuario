@@ -34,4 +34,10 @@ Todo lo redactado se verificó leyendo el código del ERP. Estos puntos dependen
 | 28 | SIG-03 §5.3 | Qué tipos de servicio Caja no cobra automáticamente (marca `caja: false` en el formulario de tarifas). | Revisar `TarifaForm.vue` con desarrollo. |
 | 29 | SIG-03 §5.2 | Los campos de *Cajas* no muestran marca de obligatorio; confirmar la validación del backend. | Intentar crear una caja vacía. |
 | 30 | SIG-03 §7.1 | La API del CIE-10 admite crear, editar y eliminar, pero la pantalla es solo de consulta. Confirmar que es lo previsto. | Consultar con desarrollo. |
+| 31 | HIS-01 §8.1 | **Posible mejora del producto**: *Servicio Social* pide los **UUID** del paciente y del trabajador social en lugar de un buscador. El manual explica cómo copiarlos de la dirección de la ficha. | Abrir *Nueva evaluación*. |
+| 32 | HIS-01 §2.2 | *Buscar por DNI* consulta un servicio de identidad externo; confirmar su disponibilidad en el hospital y qué mensaje sale si no responde. | Probar con red restringida. |
+| 33 | HIS-01 §3.2 | Significado exacto de *Fuente de financiamiento* y *Producto / Plan* al citar. | Captura real del modal. |
+| 34 | HIS-01 §4.3 | No se vio un botón *Agregar Programación* en el listado (existe la pantalla de creación); confirmar cómo se llega a ella y quién puede. | Revisar el menú con un perfil de admisión. |
+| 35 | HIS-01 §6.4 | Permiso necesario para *Turnero › Configuración* (middleware `panel`). | Probar con un perfil sin permiso. |
+| 36 | HIS-01 §5.2 | Efecto de *Atender* con una cita vinculada en la lista de espera (¿cambia el estado de la cita?). | Probar con datos de prueba. |
 

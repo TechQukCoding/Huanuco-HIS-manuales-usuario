@@ -1,0 +1,7 @@
+codigo: "HIS-01"
+titulo: "Admisión, Turnero y Referencias"
+subtitulo: "Registro de pacientes, agendamiento de citas, programación médica, turnero, referencias y servicio social en el Panel Hospitalario."
+publico: "Personal de admisión, caja de entrada, turnero y servicio social del hospital."
+version: "0.9"
+estado: "Borrador para revisión. Contenido validado contra el código del sistema; capturas pendientes."
+modulos: ["Pacientes", "Agendamiento y citados", "Programación médica", "Lista de espera y mensajes", "Turnero", "Referencias", "Servicio social"]
