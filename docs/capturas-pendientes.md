@@ -40,6 +40,11 @@ Generado por `scripts/build.py`. Guardar cada archivo en `content/<manual>/img/`
 | HIS-03 | emer-triaje.png | /app/emergencia/triaje/[id] | Enfermería (datos de prueba) | Triaje de emergencia |
 | HIS-03 | emer-episodio.png | /app/emergencia/episodio/[id] | Médico de emergencia (datos de prueba) | Episodio de emergencia |
 | HIS-03 | emer-atencion.png | /app/emergencia/atencion/[id] | Médico de emergencia (datos de prueba) | Atención de emergencia |
+| HIS-04 | hosp-lista.png | /app/hospitalizacion/hospitalizaciones | Médico (datos de prueba) | Hospitalizaciones |
+| HIS-04 | hosp-panel-camas.png | /app/hospitalizacion/panel-camas | Médico o enfermería (datos de prueba) | Panel de camas |
+| HIS-04 | hosp-expediente.png | /app/hospitalizacion/expediente/[id] | Médico (datos de prueba) | Expediente de hospitalización |
+| HIS-04 | hosp-consentimientos.png | /app/hospitalizacion/consentimientos | Médico (datos de prueba) | Consentimientos informados |
+| HIS-04 | uci-camas.png | /app/uci/camas | Médico o enfermería (datos de prueba) | Camas críticas |
 | SIG-01 | rrhh-empleados-listado.png | /sigarh/rrhh/empleados | Personal de RR. HH. (datos de prueba) | Listado de empleados |
 | SIG-01 | rrhh-empleado-paso1.png | /sigarh/rrhh/empleados/create | Personal de RR. HH. (datos de prueba) | Alta de empleado, paso Datos personales |
 | SIG-01 | rrhh-especialidades.png | /sigarh/rrhh/especialidades | Personal de RR. HH. (datos de prueba) | Especialidades y subespecialidades |

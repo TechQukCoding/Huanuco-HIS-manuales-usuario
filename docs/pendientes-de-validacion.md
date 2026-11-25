@@ -53,4 +53,8 @@ Todo lo redactado se verificó leyendo el código del ERP. Estos puntos dependen
 | 47 | HIS-03 §6.2 | El botón *Admitir en …* de las colas lleva al módulo de destino; no se verificó el efecto exacto en cada destino (UCI, quirófano, obstetricia). | Probar cada derivación con datos de prueba. |
 | 48 | HIS-03 §2 | El registro rápido del paciente nuevo en la admisión de emergencia tiene más campos que los descritos (se resumió con los obligatorios). | Captura real. |
 | 49 | Tipografía | La fuente Inter no incluye el subíndice ₂: se escribe SO2 en los manuales. | — |
+| 50 | HIS-04 §2.2 | La admisión desde Consulta Externa se registra en la atención médica; en esta lista solo se vio el botón *Admitir paciente* (de Emergencia). Confirmar si hay otra vía directa. | Probar con un paciente de consulta con destino hospitalización. |
+| 51 | HIS-04 §5 | Seguimiento, Censo, Consentimientos e Interconsultas se describieron por sus filtros y formularios; falta ver sus columnas exactas con datos. | Capturas reales. |
+| 52 | HIS-04 §6.4 | El detalle del ingreso a UCI tiene muchas secciones; las opciones exactas de *Soporte* y de *Concepto* del balance se resumieron. | Abrir un ingreso de prueba. |
+| 53 | HIS-04 §6 | Confirmar que el rol de enfermería puede registrar los controles de UCI (solo se vio la restricción de las notas de hospitalización). | Probar con la cuenta de enfermería. |
 

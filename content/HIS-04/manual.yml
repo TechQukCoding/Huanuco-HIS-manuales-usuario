@@ -1,0 +1,7 @@
+codigo: "HIS-04"
+titulo: "Hospitalización y Cuidados Intensivos"
+subtitulo: "Ingreso del paciente, panel de camas, expediente con kardex y epicrisis, seguimiento, consentimientos y unidades críticas."
+publico: "Médicos, personal de enfermería y jefaturas de hospitalización y de cuidados intensivos."
+version: "0.9"
+estado: "Borrador para revisión. Contenido validado contra el código del sistema; capturas pendientes."
+modulos: ["Hospitalizaciones", "Panel de camas", "Expediente y epicrisis", "Seguimiento y censo", "Consentimientos", "Camas críticas (UCI)", "Escalas clínicas"]
