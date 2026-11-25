@@ -18,6 +18,14 @@ Generado por `scripts/build.py`. Guardar cada archivo en `content/<manual>/img/`
 | GEN-00 | gen-perfil-erp.png | /admin/perfil | Administrador (datos de prueba) | Mi perfil en el ERP |
 | GEN-00 | gen-perfil-his-firma.png | /app/perfil | Médico con empleado vinculado (datos de prueba) | Firma electrónica y PIN en Mi perfil |
 | GEN-00 | gen-ajustes-his.png | /app/ajustes | Usuario con acceso a catálogos (datos de prueba) | Pantalla de ajustes del Panel Hospitalario |
+| SIG-01 | rrhh-empleados-listado.png | /sigarh/rrhh/empleados | Personal de RR. HH. (datos de prueba) | Listado de empleados |
+| SIG-01 | rrhh-empleado-paso1.png | /sigarh/rrhh/empleados/create | Personal de RR. HH. (datos de prueba) | Alta de empleado, paso Datos personales |
+| SIG-01 | rrhh-especialidades.png | /sigarh/rrhh/especialidades | Personal de RR. HH. (datos de prueba) | Especialidades y subespecialidades |
+| SIG-01 | rrhh-asistencia.png | /sigarh/rrhh/asistencia | Personal de RR. HH. (datos de prueba) | Registro de asistencia |
+| SIG-01 | rrhh-justificaciones.png | /sigarh/rrhh/justificaciones | Personal de RR. HH. (datos de prueba) | Listado de justificaciones e inasistencias |
+| SIG-01 | mov-justificacion-vacaciones.png | /sigarh/movimientos/vacaciones | Jefatura o RR. HH. (datos de prueba) | Bandeja de justificación y vacaciones |
+| SIG-01 | mov-cambio-turno-tramitar.png | /sigarh/movimientos/cambio-turno/tramitar | Personal de RR. HH. (datos de prueba) | Tramitar cambio de turno |
+| SIG-01 | mov-papeleta-tramitar.png | /sigarh/movimientos/papeletas/tramitar | Personal de RR. HH. (datos de prueba) | Tramitar papeleta |
 | SIG-04 | mant-lista-generica.png | /sigarh/mantenimiento/profesiones | Administrador SIGARH (datos de prueba) | Lista de Mantenimiento con indicadores, búsqueda y pestañas |
 | SIG-04 | mant-rol-crear.png | /sigarh/mantenimiento/roles-sistema/create | Administrador SIGARH con Administrar Seguridad (datos de prueba) | Formulario Crear rol del sistema |
 | SIG-04 | mant-perfil-crear.png | /sigarh/mantenimiento/perfiles-usuario/create | Administrador SIGARH con Administrar Seguridad (datos de prueba) | Formulario Nuevo perfil de usuario |

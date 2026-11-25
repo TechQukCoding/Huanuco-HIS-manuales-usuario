@@ -1,0 +1,7 @@
+codigo: "SIG-01"
+titulo: "RR. HH. y Movimientos"
+subtitulo: "Empleados, asistencia, justificaciones, vacaciones, licencias, cambios de turno y papeletas en SIGARH."
+publico: "Personal de recursos humanos y jefaturas que gestionan al personal en SIGARH."
+version: "0.9"
+estado: "Borrador para revisión. Contenido validado contra el código del sistema; capturas pendientes."
+modulos: ["Empleados", "Especialidades y feriados", "Tolerancias", "Registro de asistencia", "Justificaciones", "Vacaciones y licencias", "Cambios de turno", "Papeletas"]

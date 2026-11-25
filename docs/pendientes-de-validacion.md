@@ -18,4 +18,10 @@ Todo lo redactado se verificó leyendo el código del ERP. Estos puntos dependen
 | 12 | SIG-04 §5.3 | "Elegir al empleado con programación aprobada" sale de un texto de ayuda; el backend solo valida la profesión (MED / ENF). | Probar con un médico sin programación. |
 | 13 | SIG-04 §7 | Qué campos de cada catálogo son obligatorios se tomó de las marcas del formulario; confirmar los de Niveles, Departamentos y Grupos (comparten un componente común). | Abrir cada formulario. |
 | 14 | SIG-04 §7.3 | La pantalla *UPSS y servicios* es una jerarquía; falta documentar su alta/edición con capturas. | Captura real. |
+| 15 | SIG-01 §2.2 | El alta de empleados es un asistente de 5 pasos; los campos *Profesión*, *Régimen laboral* y *Condición laboral* salen de componentes compartidos. Confirmar su orden y etiquetas con capturas. | Abrir el alta de empleado. |
+| 16 | SIG-01 §2.5 | Las reglas de coherencia (tipo de trabajador vs. vínculo, nivel remunerativo vs. profesión) se leyeron en el backend; falta ver en qué combinaciones aparece cada mensaje. | Probar con datos de prueba. |
+| 17 | SIG-01 §3.4 | El formulario de Tolerancias exige dependencia y grupo, pero el backend admite reglas solo por grupo. Confirmar si existen reglas antiguas sin dependencia. | Revisar los datos de la base. |
+| 18 | SIG-01 §6 y §8 | No se documentó **quién** puede aprobar o rechazar cada movimiento (jefatura, RR. HH.): los permisos por acción de estas pantallas no se pudieron confirmar en el código leído. | Probar con un usuario sin permiso. |
+| 19 | SIG-01 §8.2 | Al aprobar un cambio de turno solo se documentó la asistencia del solicitante; confirmar qué ocurre con la del aceptante en la fecha de reemplazo. | Aprobar un cambio de prueba. |
+| 20 | SIG-01 §6.3 y §7.2 | Aprobar vacaciones o licencias retira cupos de Consulta Externa y marca en riesgo citas: confirmar el aviso que ve el usuario. | Aprobar una vacación de un médico con agenda. |
 
