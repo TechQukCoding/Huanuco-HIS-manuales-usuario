@@ -24,4 +24,8 @@ Todo lo redactado se verificó leyendo el código del ERP. Estos puntos dependen
 | 18 | SIG-01 §6 y §8 | No se documentó **quién** puede aprobar o rechazar cada movimiento (jefatura, RR. HH.): los permisos por acción de estas pantallas no se pudieron confirmar en el código leído. | Probar con un usuario sin permiso. |
 | 19 | SIG-01 §8.2 | Al aprobar un cambio de turno solo se documentó la asistencia del solicitante; confirmar qué ocurre con la del aceptante en la fecha de reemplazo. | Aprobar un cambio de prueba. |
 | 20 | SIG-01 §6.3 y §7.2 | Aprobar vacaciones o licencias retira cupos de Consulta Externa y marca en riesgo citas: confirmar el aviso que ve el usuario. | Aprobar una vacación de un médico con agenda. |
+| 21 | SIG-02 §4.2 | En la categoría Médicos, el diagnóstico marca como **error** cualquier turno de tipo complementario o retén (*requieren reglas y autorizaciones específicas*), por lo que esos roles no se pueden enviar ni aprobar. Confirmar si es el comportamiento previsto en esta versión. | Crear un rol médico complementario de prueba. |
+| 22 | SIG-02 §7.2 | Significado exacto de la marca *Rol pendiente de aprobación* en el calendario de turnos. | Captura real con un rol pendiente. |
+| 23 | SIG-02 §2.1 | El motivo del rechazo se muestra al pasar el cursor sobre el estado en la lista (atributo `title`); confirmar que es visible en pantallas táctiles. | Probar en móvil. |
+| 24 | SIG-02 §5.3 | Reglas de aprobación leídas en `puede_aprobar_roles` (permiso + jefe de servicio o alcance global); falta confirmar el caso de un revisor sin jefatura con alcance global apagado. | Probar con un revisor de prueba. |
 

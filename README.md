@@ -47,7 +47,8 @@ GEN-00 · ERP-01 · SIG-01…04 · HIS-01…11 · NUT-01 (ver `config/manuales.y
 | ERP-01 Administración central | Borrador 0.9 · 21 págs · validado contra el código · capturas pendientes |
 | SIG-04 Mantenimiento y seguridad | Borrador 0.9 · 25 págs · validado contra el código · capturas pendientes |
 | SIG-01 RR. HH. y Movimientos | Borrador 0.9 · 25 págs · validado contra el código · capturas pendientes |
-| Resto (14 manuales) | Pendiente |
+| SIG-02 Roles de turno | Borrador 0.9 · 20 págs · validado contra el código · capturas pendientes |
+| Resto (13 manuales) | Pendiente |
 
 Capturas por tomar: `docs/capturas-pendientes.md` (se regenera con `build.py`).
 Puntos por confirmar con la app corriendo: `docs/pendientes-de-validacion.md`.

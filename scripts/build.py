@@ -140,4 +140,5 @@ if __name__ == "__main__":
     for c in sorted((ROOT / "content").iterdir()):
         if (c / "manual.yml").exists() and (not pedidos or any(c.name.startswith(p) for p in pedidos)):
             construir(c)
-    escribir_pendientes()
+    if not pedidos:   # la lista de capturas solo se regenera al compilar todos los manuales
+        escribir_pendientes()

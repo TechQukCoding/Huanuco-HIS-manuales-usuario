@@ -26,6 +26,13 @@ Generado por `scripts/build.py`. Guardar cada archivo en `content/<manual>/img/`
 | SIG-01 | mov-justificacion-vacaciones.png | /sigarh/movimientos/vacaciones | Jefatura o RR. HH. (datos de prueba) | Bandeja de justificación y vacaciones |
 | SIG-01 | mov-cambio-turno-tramitar.png | /sigarh/movimientos/cambio-turno/tramitar | Personal de RR. HH. (datos de prueba) | Tramitar cambio de turno |
 | SIG-01 | mov-papeleta-tramitar.png | /sigarh/movimientos/papeletas/tramitar | Personal de RR. HH. (datos de prueba) | Tramitar papeleta |
+| SIG-02 | roles-lista.png | /sigarh/creacion-roles/medicos/ordinario | Elaborador de roles (datos de prueba) | Lista de roles en trabajo de una modalidad |
+| SIG-02 | roles-nuevo.png | /sigarh/creacion-roles/medicos/ordinario/create | Elaborador de roles (datos de prueba) | Formulario Nuevo rol |
+| SIG-02 | roles-editor.png | /sigarh/creacion-roles/medicos/ordinario/[id] | Elaborador de roles (datos de prueba) | Editor de un rol de turno |
+| SIG-02 | pendientes-bandeja.png | /sigarh/roles-pendientes | Revisor con permiso Aprobar roles de turno (datos de prueba) | Bandeja de roles pendientes |
+| SIG-02 | aprobados-solicitar.png | /sigarh/roles-aprobados/[id] | Elaborador de roles (datos de prueba) | Solicitud de incorporación de personal |
+| SIG-02 | aprobados-lista.png | /sigarh/roles-aprobados | Cualquier usuario con acceso (datos de prueba) | Lista de roles aprobados |
+| SIG-02 | aprobados-calendario.png | /sigarh/roles-aprobados/calendario | Cualquier usuario con acceso (datos de prueba) | Calendario de turnos |
 | SIG-04 | mant-lista-generica.png | /sigarh/mantenimiento/profesiones | Administrador SIGARH (datos de prueba) | Lista de Mantenimiento con indicadores, búsqueda y pestañas |
 | SIG-04 | mant-rol-crear.png | /sigarh/mantenimiento/roles-sistema/create | Administrador SIGARH con Administrar Seguridad (datos de prueba) | Formulario Crear rol del sistema |
 | SIG-04 | mant-perfil-crear.png | /sigarh/mantenimiento/perfiles-usuario/create | Administrador SIGARH con Administrar Seguridad (datos de prueba) | Formulario Nuevo perfil de usuario |

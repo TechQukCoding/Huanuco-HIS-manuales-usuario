@@ -1,0 +1,7 @@
+codigo: "SIG-02"
+titulo: "Roles de turno"
+subtitulo: "Cómo crear, revisar y aprobar la programación mensual del personal, y consultarla en el calendario de turnos."
+publico: "Jefaturas y personal que elaboran roles de turno, y revisores que los aprueban en SIGARH."
+version: "0.9"
+estado: "Borrador para revisión. Contenido validado contra el código del sistema; capturas pendientes."
+modulos: ["Creación de roles", "Diagnóstico de jornada", "Roles pendientes", "Solicitudes de modificación", "Roles aprobados", "Calendario de turnos"]
