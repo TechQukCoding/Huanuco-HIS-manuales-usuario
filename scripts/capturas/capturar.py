@@ -65,6 +65,18 @@ def credenciales(panel, usuario=None):
     return usr, pwd, (normalizar_totp(totp) if (panel == "admin" and totp) else totp)
 
 
+def volcar_diagnostico(page, panel, motivo):
+    """Guarda una imagen y un resumen del texto visible para entender por qué falló el inicio de sesión."""
+    destino = ROOT / "docs" / f"debug-login-{panel}.png"
+    try:
+        destino.parent.mkdir(parents=True, exist_ok=True)
+        page.screenshot(path=str(destino))
+        texto = " ".join(page.inner_text("body").split())[:300]
+    except Exception:
+        texto = "(no se pudo leer la página)"
+    return f"{motivo} Imagen: docs/debug-login-{panel}.png. Texto en pantalla: {texto}"
+
+
 def iniciar_sesion(pw, browser, panel, usuario=None):
     from playwright.sync_api import TimeoutError as PWTimeout
     ctx = browser.new_context(viewport={"width": CFG["viewport"]["ancho"], "height": CFG["viewport"]["alto"]}, locale="es-PE")
@@ -75,22 +87,26 @@ def iniciar_sesion(pw, browser, panel, usuario=None):
     page.get_by_label(re.compile("contraseña", re.I)).first.fill(pwd)
     page.get_by_role("button", name=re.compile("iniciar sesión|ingresar", re.I)).first.click()
     if panel == "admin":
-        # Verificación en dos pasos: el código de 6 dígitos se completa solo al escribir el sexto número.
+        # Verificación en dos pasos: seis casillas; la primera ya tiene el foco y se envía sola al completar la sexta.
+        casilla = page.locator('input[autocomplete="one-time-code"], input[inputmode="numeric"], input[type="number"]').first
         try:
-            page.wait_for_timeout(1200)
-            if "login" in page.url:
-                if not totp:
-                    sys.exit("El panel ERP pide MFA: defina CAP_ADMIN_TOTP (secreto TOTP de la cuenta de prueba).")
-                import pyotp
-                page.keyboard.press("Tab")
-                page.keyboard.type(pyotp.TOTP(totp).now(), delay=60)
-                page.get_by_role("button", name=re.compile("verificar", re.I)).first.click(timeout=3000)
+            casilla.wait_for(state="visible", timeout=10000)
         except PWTimeout:
-            pass
+            if page.get_by_role("button", name=re.compile("ya la tengo", re.I)).count():
+                sys.exit(volcar_diagnostico(page, panel, "La cuenta del ERP aún no tiene MFA configurado: configúrelo una vez a mano y guarde la clave manual."))
+            sys.exit(volcar_diagnostico(page, panel, "No apareció la pantalla del código MFA (¿contraseña incorrecta?)."))
+        if not totp:
+            sys.exit("El panel ERP pide MFA: defina CAP_ADMIN_TOTP (la clave manual del MFA de la cuenta de prueba).")
+        import pyotp
+        resta = 30 - (time.time() % 30)
+        if resta < 3:                       # no usar un código a punto de vencer
+            time.sleep(resta + 0.5)
+        casilla.click()
+        page.keyboard.type(pyotp.TOTP(totp).now(), delay=90)
     try:
-        page.wait_for_url(lambda u: "login" not in u, timeout=15000)
+        page.wait_for_url(lambda u: "login" not in u, timeout=20000)
     except PWTimeout:
-        sys.exit(f"No se pudo iniciar sesión en el panel {panel}. Revise usuario, contraseña y base_url.")
+        sys.exit(volcar_diagnostico(page, panel, f"No se pudo iniciar sesión en el panel {panel}."))
     return ctx
 
 
