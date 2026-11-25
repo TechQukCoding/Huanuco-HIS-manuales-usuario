@@ -124,7 +124,7 @@ def iniciar_sesion(pw, browser, panel, usuario=None):
         page.wait_for_url(lambda u: "login" not in u, timeout=20000)
     except PWTimeout:
         sys.exit(volcar_diagnostico(page, panel, f"No se pudo iniciar sesión en el panel {panel}."))
-    return ctx
+    return page          # se reutiliza esta pestaña: la aplicación guarda parte de la sesión por pestaña
 
 
 def resolver_ruta(page, fila):
@@ -209,8 +209,10 @@ def main():
                 resultado.append((f, "sin sesión: " + sesiones.get((clave_ses, "motivo"), "login falló")))
                 print("FALLO", f["manual"], f["archivo"], "(no se pudo iniciar sesión)")
                 continue
-            ctx = sesiones[clave_ses] if panel else publico
-            page = ctx.new_page()
+            if panel:
+                page = sesiones[clave_ses]          # misma pestaña que inició sesión
+            else:
+                page = publico.new_page()
             destino = ROOT / "content" / f["manual"] / "img" / f["archivo"]
             try:
                 err = capturar(page, f, destino)
@@ -222,7 +224,8 @@ def main():
                     err += f" (imagen: docs/debug-{f['archivo']})"
                 except Exception:
                     pass
-            page.close()
+            if not panel:
+                page.close()
             resultado.append((f, err))
             print(("OK   " if not err else ("AVISO" if err.startswith("REVISAR") else "FALLO")), f["manual"], f["archivo"], err or "")
         browser.close()
