@@ -12,7 +12,7 @@
    set CAP_SIGARH_USER=... & set CAP_SIGARH_PASS=...
    set CAP_HIS_USER=...    & set CAP_HIS_PASS=...
    ```
-   (en Linux/Mac use `export` en lugar de `set`).
+   (en PowerShell: `$env:NOMBRE="valor"`; en Linux/Mac: `export`). Guía completa: `docs/GUIA-CAPTURAS.md`.
 4. Ajuste `base_url` en `config/capturas.yml`.
 5. Pruebe sin tomar nada: `python scripts/capturas/capturar.py --lista`
 6. Tome las capturas: `python scripts/capturas/capturar.py` (o `--manual HIS-01`).
