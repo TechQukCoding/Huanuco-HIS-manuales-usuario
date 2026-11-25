@@ -48,4 +48,9 @@ Todo lo redactado se verificó leyendo el código del ERP. Estos puntos dependen
 | 42 | Entorno | **Mejora para desarrollo**: el backend declara `sqlalchemy` sin `greenlet`/`sqlalchemy[asyncio]`; en algunos equipos Windows `pip install -e ".[dev]"` no lo instala y `alembic` falla. | Instalación limpia en Windows. |
 | 43 | Entorno | **Mejora para desarrollo**: `npm install` falla con `ERESOLVE` (conflicto de pares entre `@pinia/nuxt` y `@pinia-plugin-persistedstate/nuxt`); funciona con `--legacy-peer-deps`. Sugerido: `.npmrc` con `legacy-peer-deps=true`. | `npm install` en limpio. |
 | 44 | Datos de prueba | **Choque de scripts**: `scripts.demo_sigarh` etapa `renombrar` falla (`uq_mant_perfiles_usuario_nombre`) porque la instalación del hospital ya crea los perfiles con nombre limpio (*Médico asistencial*, etc.) además de los *(prueba)* de `seed_datos_prueba`. Se omitió esa etapa (`--solo configuracion rrhh roles nutricion`). | Instalar un hospital nuevo y correr los tres scripts en orden. |
+| 45 | HIS-03 §3 | El texto de ayuda del triaje dice *I = grave/inmediata, II = urgente, III = leve*, pero las tarjetas muestran I Emergencia, II Urgencia mayor, III Urgencia menor y IV Patología aguda común. El manual usa las de las tarjetas. | Comparar con la pantalla real. |
+| 46 | HIS-03 §4.5 | Las secciones *Shock trauma* y *Yesos* del episodio se describieron por sus campos; falta ver su pantalla completa. | Captura real. |
+| 47 | HIS-03 §6.2 | El botón *Admitir en …* de las colas lleva al módulo de destino; no se verificó el efecto exacto en cada destino (UCI, quirófano, obstetricia). | Probar cada derivación con datos de prueba. |
+| 48 | HIS-03 §2 | El registro rápido del paciente nuevo en la admisión de emergencia tiene más campos que los descritos (se resumió con los obligatorios). | Captura real. |
+| 49 | Tipografía | La fuente Inter no incluye el subíndice ₂: se escribe SO2 en los manuales. | — |
 

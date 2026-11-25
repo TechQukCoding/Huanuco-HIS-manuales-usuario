@@ -38,7 +38,7 @@ Solo aparecen las citas **confirmadas** de la fecha elegida. Si no hay ninguna: 
 | Peso (kg) y Talla (cm) | <span class="no">No</span> | Con ambos, se calcula el **IMC**. |
 | Perímetro cefálico (cm) | <span class="no">No</span> | Útil en pediatría. |
 | Perímetro abdominal (cm) | <span class="no">No</span> | Opcional. |
-| SO₂ (%) | <span class="no">No</span> | Saturación de oxígeno: entre 0 y 100 %. |
+| SO2 (%) | <span class="no">No</span> | Saturación de oxígeno: entre 0 y 100 %. |
 
 Mensajes de validación: *Ingresa un número válido sin valores negativos*, *La medición debe ser mayor que cero* y *La saturación debe estar entre 0 y 100 %*.
 

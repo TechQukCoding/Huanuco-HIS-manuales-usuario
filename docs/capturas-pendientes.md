@@ -36,6 +36,10 @@ Generado por `scripts/build.py`. Guardar cada archivo en `content/<manual>/img/`
 | HIS-02 | ce-resultados.png | /app/consulta-externa/atenciones-medicas/resultados | Médico (datos de prueba) | Resultados de exámenes |
 | HIS-02 | ce-bandeja.png | /app/consulta-externa/bandeja-electronica | Médico (datos de prueba) | Bandeja electrónica |
 | HIS-02 | proc-atenciones.png | /app/procedimientos/atenciones | Personal asistencial (datos de prueba) | Atenciones de procedimientos |
+| HIS-03 | emer-admisiones.png | /app/emergencia/admisiones | Personal de admisión (datos de prueba) | Admisiones de emergencia |
+| HIS-03 | emer-triaje.png | /app/emergencia/triaje/[id] | Enfermería (datos de prueba) | Triaje de emergencia |
+| HIS-03 | emer-episodio.png | /app/emergencia/episodio/[id] | Médico de emergencia (datos de prueba) | Episodio de emergencia |
+| HIS-03 | emer-atencion.png | /app/emergencia/atencion/[id] | Médico de emergencia (datos de prueba) | Atención de emergencia |
 | SIG-01 | rrhh-empleados-listado.png | /sigarh/rrhh/empleados | Personal de RR. HH. (datos de prueba) | Listado de empleados |
 | SIG-01 | rrhh-empleado-paso1.png | /sigarh/rrhh/empleados/create | Personal de RR. HH. (datos de prueba) | Alta de empleado, paso Datos personales |
 | SIG-01 | rrhh-especialidades.png | /sigarh/rrhh/especialidades | Personal de RR. HH. (datos de prueba) | Especialidades y subespecialidades |

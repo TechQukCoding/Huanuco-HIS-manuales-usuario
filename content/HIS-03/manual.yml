@@ -1,0 +1,7 @@
+codigo: "HIS-03"
+titulo: "Emergencia"
+subtitulo: "Admisión directa, triaje por prioridad, episodio con observación y medicamentos, atención con firma y derivaciones."
+publico: "Médicos y personal de enfermería y admisión del servicio de emergencia."
+version: "0.9"
+estado: "Borrador para revisión. Contenido validado contra el código del sistema; capturas pendientes."
+modulos: ["Admisión de emergencia", "Triaje", "Episodio y observación", "Atención con firma", "Derivaciones", "Tiempos de atención"]
