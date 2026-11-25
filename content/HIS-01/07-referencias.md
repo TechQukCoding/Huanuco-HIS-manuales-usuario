@@ -21,7 +21,7 @@ Una referencia **Enviada** puede quedar **Rechazada** por el destino; en ese cas
 
 ## 7.2 Generar una referencia desde Emergencia
 
-Las referencias nacen de una **atención de Emergencia** cuyo destino fue *Referencia* (manual HIS-03). Pulse **Admitir desde Emergencia**: se abre *Admitir referencia derivada de Emergencia* con la lista de pacientes en espera. Si no hay nadie: *No hay pacientes de Emergencia esperando referencia.*
+Las referencias nacen de una **atención de Emergencia** cuyo destino fue *Referencia* (manual HIS-03) o de una **atención médica de Consulta Externa** con destino *Referencia* (manual HIS-02, capítulo 5). Pulse **Admitir desde Emergencia**: se abre *Admitir referencia derivada de Emergencia* con la lista de pacientes en espera. Si no hay nadie: *No hay pacientes de Emergencia esperando referencia.*
 
 <ol class="pasos">
 <li>Elija al paciente de la lista.</li>

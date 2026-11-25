@@ -27,6 +27,15 @@ Generado por `scripts/build.py`. Guardar cada archivo en `content/<manual>/img/`
 | HIS-01 | turnero-emision.png | /app/turnero/emision | Personal de admisión (datos de prueba) | Emisión de tickets |
 | HIS-01 | ref-lista.png | /app/referencias/referencias | Personal con acceso a Referencias (datos de prueba) | Lista de referencias |
 | HIS-01 | ss-evaluacion.png | /app/servicio-social/servicio-social | Trabajador social (datos de prueba) | Nueva evaluación social |
+| HIS-02 | ce-citas-por-confirmar.png | /app/consulta-externa/citas-por-confirmar | Enfermería (datos de prueba) | Citas por confirmar |
+| HIS-02 | ce-triaje-panel.png | /app/consulta-externa/triaje | Enfermería (datos de prueba) | Panel de triaje |
+| HIS-02 | ce-triaje-registrar.png | /app/consulta-externa/triaje/create | Enfermería (datos de prueba) | Registrar triaje |
+| HIS-02 | ce-atenciones-lista.png | /app/consulta-externa/atenciones-medicas | Médico (datos de prueba) | Lista de atenciones médicas |
+| HIS-02 | ce-atencion-editor.png | /app/consulta-externa/atenciones-medicas/[id] | Médico (datos de prueba) | Pantalla de atención médica |
+| HIS-02 | ce-receta.png | /app/consulta-externa/atenciones-medicas/[id] | Médico (datos de prueba) | Receta de farmacia |
+| HIS-02 | ce-resultados.png | /app/consulta-externa/atenciones-medicas/resultados | Médico (datos de prueba) | Resultados de exámenes |
+| HIS-02 | ce-bandeja.png | /app/consulta-externa/bandeja-electronica | Médico (datos de prueba) | Bandeja electrónica |
+| HIS-02 | proc-atenciones.png | /app/procedimientos/atenciones | Personal asistencial (datos de prueba) | Atenciones de procedimientos |
 | SIG-01 | rrhh-empleados-listado.png | /sigarh/rrhh/empleados | Personal de RR. HH. (datos de prueba) | Listado de empleados |
 | SIG-01 | rrhh-empleado-paso1.png | /sigarh/rrhh/empleados/create | Personal de RR. HH. (datos de prueba) | Alta de empleado, paso Datos personales |
 | SIG-01 | rrhh-especialidades.png | /sigarh/rrhh/especialidades | Personal de RR. HH. (datos de prueba) | Especialidades y subespecialidades |

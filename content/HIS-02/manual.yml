@@ -1,0 +1,7 @@
+codigo: "HIS-02"
+titulo: "Consulta Externa, Telesalud y Procedimientos"
+subtitulo: "Confirmación de citas, triaje, atención médica con firma electrónica, órdenes, resultados, telesalud y procedimientos."
+publico: "Médicos, personal de enfermería y personal de telesalud y procedimientos del hospital."
+version: "0.9"
+estado: "Borrador para revisión. Contenido validado contra el código del sistema; capturas pendientes."
+modulos: ["Citas por confirmar", "Triaje", "Atención médica", "Órdenes y recetas", "Resultados", "Bandeja y calendario", "Telesalud", "Procedimientos"]

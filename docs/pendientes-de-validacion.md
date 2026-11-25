@@ -40,4 +40,9 @@ Todo lo redactado se verificó leyendo el código del ERP. Estos puntos dependen
 | 34 | HIS-01 §4.3 | No se vio un botón *Agregar Programación* en el listado (existe la pantalla de creación); confirmar cómo se llega a ella y quién puede. | Revisar el menú con un perfil de admisión. |
 | 35 | HIS-01 §6.4 | Permiso necesario para *Turnero › Configuración* (middleware `panel`). | Probar con un perfil sin permiso. |
 | 36 | HIS-01 §5.2 | Efecto de *Atender* con una cita vinculada en la lista de espera (¿cambia el estado de la cita?). | Probar con datos de prueba. |
+| 37 | HIS-02 §5.5 | **Posible incoherencia del producto**: el formulario de hospitalización de la consulta muestra un botón *Dar de Alta*, pero el backend responde que el alta se registra firmando la epicrisis en Hospitalización. | Probar el botón con un paciente internado de prueba. |
+| 38 | HIS-02 §3.2 | Los rangos de ejemplo de los signos vitales (p. ej. frecuencia respiratoria *30-60*) parecen pediátricos; confirmar si deben variar por edad. | Revisar con el área clínica. |
+| 39 | HIS-02 §7.1 | Los nombres exactos de las tres listas de la Bandeja electrónica se infirieron de sus mensajes vacíos. | Captura real. |
+| 40 | HIS-02 §8.4 | Cuándo se habilita el botón *Programar* de una solicitud de telesalud (depende de que exista una cita virtual del paciente por enlazar). | Probar con datos de prueba. |
+| 41 | HIS-02 §4 | Los destinos *Alta* y *Referencia* y sus efectos sobre otros módulos (Admisión, Referencias) se validaron en backend; falta probar el recorrido completo. | Atender una consulta de prueba de principio a fin. |
 

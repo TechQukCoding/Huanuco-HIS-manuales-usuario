@@ -50,7 +50,8 @@ GEN-00 · ERP-01 · SIG-01…04 · HIS-01…11 · NUT-01 (ver `config/manuales.y
 | SIG-02 Roles de turno | Borrador 0.9 · 20 págs · validado contra el código · capturas pendientes |
 | SIG-03 Infraestructura y configuración | Borrador 0.9 · 21 págs · validado contra el código · capturas pendientes |
 | HIS-01 Admisión, Turnero y Referencias | Borrador 0.9 · 26 págs · validado contra el código · capturas pendientes |
-| Resto (11 manuales) | Pendiente |
+| HIS-02 Consulta Externa, Telesalud y Procedimientos | Borrador 0.9 · 27 págs · validado contra el código · capturas pendientes |
+| Resto (10 manuales) | Pendiente |
 
-Capturas por tomar: `docs/capturas-pendientes.md` (se regenera con `build.py`).
+Capturas por tomar: `docs/capturas-pendientes.md` (se regenera con `build.py`). Cómo tomarlas: `scripts/capturas/README.md`.
 Puntos por confirmar con la app corriendo: `docs/pendientes-de-validacion.md`.
