@@ -21,3 +21,14 @@
 
 Cada imagen se guarda como `content/<MANUAL>/img/<archivo>.png`. Los manuales la usan sola al recompilar.
 **Solo datos ficticios**: revise las imágenes antes de subirlas.
+
+## Pantallas de detalle (`[id]`)
+Para abrir un registro concreto, cree `config/capturas.local.yml` (no se sube a git) con la dirección exacta:
+```yaml
+rutas:
+  "roles-editor.png": "/sigarh/creacion-roles/medicos/ordinario/<id-de-un-rol-borrador>"
+  "aprobados-solicitar.png": "/sigarh/roles-aprobados/<id-de-un-rol-aprobado>"
+clics:
+  "aprobados-solicitar.png": ["Solicitar incorporación"]
+```
+

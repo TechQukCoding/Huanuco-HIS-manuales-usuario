@@ -17,6 +17,14 @@ import yaml
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 CFG = yaml.safe_load((ROOT / "config/capturas.yml").read_text(encoding="utf8"))
+# Ajustes propios de cada equipo (ids de registros de prueba, etc.): config/capturas.local.yml, que no se sube a git.
+_LOCAL = ROOT / "config/capturas.local.yml"
+if _LOCAL.exists():
+    for _k, _v in (yaml.safe_load(_LOCAL.read_text(encoding="utf8")) or {}).items():
+        if isinstance(_v, dict) and isinstance(CFG.get(_k), dict):
+            CFG[_k].update(_v)
+        else:
+            CFG[_k] = _v
 
 
 def leer_pendientes():
