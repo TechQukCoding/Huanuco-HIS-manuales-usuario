@@ -32,3 +32,13 @@ clics:
   "aprobados-solicitar.png": ["Solicitar incorporación"]
 ```
 
+## Datos de Emergencia para las capturas de HIS-03
+Si la base no tiene admisiones de emergencia, cree dos ficticias con un solo comando (desde la carpeta de manuales):
+```
+docker exec -i -e PGPASSWORD=erp_password erp_postgres psql -U erp_user -d his_prueba < scripts\capturas\datos_emergencia_prueba.sql
+```
+Imprime tres líneas para `config/capturas.local.yml`. Es seguro repetirlo. Para borrarlas:
+```
+docker exec -e PGPASSWORD=erp_password erp_postgres psql -U erp_user -d his_prueba -c "delete from admisiones_emergencia where numero_cuenta like 'EME-PRUEBA-%'"
+```
+
