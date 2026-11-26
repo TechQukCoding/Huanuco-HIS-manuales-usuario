@@ -35,5 +35,5 @@ Portal de atención al cliente de Techquk: **https://atencionalcliente.techquk.c
 | **Módulo** | Conjunto de funciones que el hospital contrata y que se activa en el ERP. |
 | **Perfil** | Conjunto de permisos y rol asignado a una cuenta. |
 | **MFA** | Verificación en dos pasos: contraseña más un código de un solo uso. |
-| **TOTP** | Tipo de código que se renueva cada 30 segundos en la aplicación autenticadora. |
+| **Código de verificación** | Número de 6 dígitos que se renueva cada 30 segundos en la aplicación autenticadora del teléfono. |
 | **PIN de firma** | Clave de 6 dígitos que protege la firma electrónica del profesional. |

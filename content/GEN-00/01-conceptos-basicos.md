@@ -4,13 +4,13 @@
 
 ## 1.1 Los tres paneles
 
-| Panel | Para quién | Dirección de acceso | Verificación al ingresar |
+| Panel | Para quién | El enlace termina en | Verificación al ingresar |
 |---|---|---|---|
 | **ERP** (administración central) | Administradores centrales del sistema | `/admin/login` | Contraseña y código MFA |
 | **HIS** (Panel Hospitalario) | Personal asistencial y administrativo del hospital: admisión, consulta externa, emergencia, hospitalización, farmacia, caja y demás áreas | `/app/login` | Contraseña |
 | **SIGARH** | Personal de recursos humanos, roles de turno e infraestructura y configuración institucional | `/sigarh/login` | Contraseña |
 
-La dirección completa es la del sitio web de su hospital seguida de la ruta indicada. Por ejemplo, para el HIS: `https://<sitio-de-su-hospital>/app/login`. Si no la conoce, solicítela al administrador de su hospital.
+Su hospital le indicará el **enlace** de cada panel: es la dirección del sitio web del hospital seguida de ese final. Si no lo tiene, solicítelo al administrador de su hospital y guárdelo en los favoritos del navegador.
 
 !!! important "Importante"
     Cada cuenta pertenece a **un solo panel**. Con una cuenta del HIS no se puede ingresar a SIGARH ni al ERP, y al revés. Si con una sesión abierta usted escribe la dirección de otro panel, el sistema cierra la sesión y lo lleva al inicio de sesión de ese panel.

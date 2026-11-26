@@ -67,5 +67,5 @@ Cuando el diagnóstico no muestra errores, pulse **Enviar a revisión**. El sist
 - Si hay errores: *Corrige los errores del diagnóstico antes de enviar.*
 - Si el rol ya se envió: *El rol ya fue enviado.*
 - Si todo está bien, el rol pasa a **Pendiente** y vuelve a la lista.
-- El servidor vuelve a revisar todo al enviar: *No se puede enviar el rol: …* y los primeros problemas.
+- El sistema vuelve a revisar todo al enviar: *No se puede enviar el rol: …* y los primeros problemas.
 - Una vez enviado, el rol **no se puede editar** hasta que sea rechazado.

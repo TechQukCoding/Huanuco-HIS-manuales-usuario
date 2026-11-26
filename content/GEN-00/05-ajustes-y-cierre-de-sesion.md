@@ -36,7 +36,7 @@ El engranaje de la barra superior abre **Ajustes**, donde cada usuario personali
 <li>Elija <strong>Cerrar sesión</strong>.</li>
 </ol>
 
-Si el servidor no pudo confirmar la revocación de la sesión, el inicio de sesión muestra un aviso en amarillo. **Si usó un equipo compartido, cambie su contraseña por seguridad.**
+Si el sistema no pudo confirmar el cierre de la sesión, el inicio de sesión muestra un aviso en amarillo. **Si usó un equipo compartido, cambie su contraseña por seguridad.**
 
 !!! important "Importante"
     En equipos compartidos, cierre siempre la sesión al terminar y no use la opción **Recordarme** del ERP.

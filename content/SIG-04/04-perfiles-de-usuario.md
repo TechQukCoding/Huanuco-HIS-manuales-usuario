@@ -41,7 +41,7 @@ Un panel lateral muestra el resumen: nombre, rol y cantidad de códigos de acces
 ## 4.4 Editar un perfil
 
 !!! important "Importante"
-    **Editar un perfil afecta a todas las cuentas que lo tienen.** El sistema vuelve a consultar el perfil, el rol y los módulos habilitados en cada solicitud y en cada renovación de sesión, de modo que el cambio se aplica de inmediato.
+    **Editar un perfil afecta a todas las cuentas que lo tienen.** El cambio se aplica de inmediato.
 
 | Regla | Mensaje del sistema |
 |---|---|

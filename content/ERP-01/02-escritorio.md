@@ -22,7 +22,7 @@ El **Escritorio** es la primera pantalla del ERP. Resume el estado del hospital 
 
 | Alerta | Cuándo aparece | Qué hacer |
 |---|---|---|
-| *El hospital no terminó de instalarse* / *La instalación del hospital falló* | La instalación no concluyó. | Pulse **Revisar** y, si falló, pida al personal técnico ejecutar de nuevo el script de instalación en el servidor. |
+| *El hospital no terminó de instalarse* / *La instalación del hospital falló* | La instalación no concluyó. | Pulse **Revisar** y, si falló, comuníquese con soporte técnico de Techquk para que repitan la instalación. |
 | *No se pudo consultar la base del hospital* | El ERP no logra leer los datos del hospital. Las cifras de cuentas y la actividad no están disponibles. | Avise a soporte técnico. |
 | *N evento(s) de auditoría por recuperar* | Hay eventos de auditoría pendientes de registrarse. | Pulse **Revisar** y reintente desde *Auditoría del sistema* (capítulo 7). |
 

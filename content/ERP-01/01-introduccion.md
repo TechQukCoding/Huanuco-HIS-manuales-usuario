@@ -14,7 +14,7 @@
 | Revisar la auditoría del sistema y del hospital | |
 
 !!! note "Nota"
-    En esta edición el sistema administra **un hospital**. El hospital se instala en el servidor con el script de instalación; el ERP permite completar y mantener sus datos, pero no instalarlo ni cambiar su nivel.
+    En esta edición el sistema administra **un hospital**. El hospital lo instala el personal técnico de Techquk; el ERP permite completar y mantener sus datos, pero no instalarlo ni cambiar su nivel.
 
 ## 1.2 Tipos de cuenta administradora
 

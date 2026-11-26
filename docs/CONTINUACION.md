@@ -5,6 +5,15 @@ Documento para retomar el trabajo en una sesión nueva. Léalo completo antes de
 ## 1. Objetivo
 Manuales de usuario (PDF) del ERP Hospitalario de Techquk (paneles **ERP**, **SIGARH** y **HIS**) para el Hospital de Nivel II – Huánuco. Se redactan en Markdown + CSS y se exportan a PDF con el estilo del brochure de Techquk. **El contenido sale del código del ERP, no del brochure** (del brochure solo se tomó el estilo).
 
+## 1 bis. Público y lenguaje (regla del usuario)
+**Los manuales son para el personal que usa el sistema (médicos, enfermería, admisión, caja, RR. HH., administradores), NO para programadores.** Escribir para quien nunca ha visto el código:
+- **Evitar:** UUID, identificadores internos, rutas como `/app/...` (si hace falta, «el enlace termina en…»), servidor, script, base de datos, backend/frontend, API, token, TOTP, `.env`, nombres de campos técnicos (snake_case), «migración», «tenant».
+- **Decir en su lugar:** «soporte técnico de Techquk», «el sistema», «el enlace de su hospital», «código de verificación», «código del paciente».
+- **Sí se citan** los mensajes que el usuario ve en pantalla, entre comillas o cursiva, aunque suenen técnicos, y los nombres exactos de menús y botones.
+- Lo técnico (causas en el código, dudas del backend, mejoras de producto) va en `docs/pendientes-de-validacion.md`, **no en los PDF**.
+- Antes de entregar un manual: `grep -nE "UUID|servidor|script|backend|token|TOTP|snake_case" content/<CODIGO>/*.md` y revisar cada coincidencia.
+- Estado: se limpiaron los 11 manuales existentes (ver historial de git); aplicar la misma regla a los 7 pendientes.
+
 ## 2. Estado (al cierre de esta sesión)
 18 manuales planificados (`config/manuales.yml`: mapa manual → grupos del menú; `scripts/cobertura.py` verifica que ningún grupo quede sin manual).
 

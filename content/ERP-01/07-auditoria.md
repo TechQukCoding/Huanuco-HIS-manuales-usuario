@@ -36,12 +36,12 @@ Haga clic en una fila. Se abre un panel lateral con:
 
 ## 7.4 Eventos pendientes de reintento (Auditoría del sistema)
 
-Si por una falla temporal algunos eventos no pudieron registrarse, aparece un aviso amarillo: *N evento(s) de auditoría esperan reintento*. Si quedaron en el archivo de emergencia porque la base de administración no respondió, el aviso lo indica.
+Si por una falla temporal algunos eventos no pudieron registrarse, aparece un aviso amarillo: *N evento(s) de auditoría esperan reintento*. Si el sistema no pudo guardarlos de inmediato, el aviso lo indica.
 
 <ol class="pasos">
 <li>Pulse <strong>Reintentar ahora</strong>.</li>
 <li>El aviso informa cuántos eventos se recuperaron y cuántos tuvieron error.</li>
-<li>Si persisten errores, avise a soporte técnico para que revise los registros del servidor.</li>
+<li>Si persisten errores, avise a soporte técnico de Techquk.</li>
 </ol>
 
 !!! note "Nota"

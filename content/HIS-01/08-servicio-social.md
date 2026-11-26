@@ -17,9 +17,9 @@ Pulse **Nueva evaluación**.
 
 | Campo | Obligatorio | Descripción |
 |---|:-:|---|
-| ID del paciente | <span class="si">Sí</span> | Identificador del paciente (ver el aviso de abajo). |
-| ID del trabajador social | <span class="si">Sí</span> | Identificador del empleado. **Debe tener la profesión Trabajador Social (TSO)** en SIGARH. |
-| Origen (opcional) | <span class="no">No</span> | **Directo**, **Consulta Externa**, **Emergencia** u **Hospitalización**. Si elige uno, aparece **ID del origen**. |
+| Código del paciente | <span class="si">Sí</span> | Código largo de letras y números del paciente (ver el aviso de abajo). |
+| Código del trabajador social | <span class="si">Sí</span> | Código largo de letras y números del empleado. **Debe tener la profesión Trabajador Social (TSO)** en SIGARH. |
+| Origen (opcional) | <span class="no">No</span> | **Directo**, **Consulta Externa**, **Emergencia** u **Hospitalización**. Si elige uno, aparece el **código del origen**. |
 | Tipo de vivienda | <span class="no">No</span> | Propia, Alquilada, Alojada, Asentamiento humano o Sin vivienda. |
 | Clasificación socioeconómica (referencial) | <span class="no">No</span> | No pobre, Pobre o Pobre extremo. |
 | Red de apoyo familiar | <span class="no">No</span> | Descripción libre. |
@@ -28,7 +28,7 @@ Pulse **Nueva evaluación**.
 | Recomendaciones | <span class="no">No</span> | Indicaciones del trabajador social. |
 
 !!! important "Importante"
-    En esta versión, la pantalla pide los **identificadores internos (UUID)** del paciente y del trabajador social, no un buscador. Se obtienen de la dirección de su ficha: en la ficha del paciente (`/app/admision/pacientes/<id>`) y en la del empleado en SIGARH (`/sigarh/rrhh/empleados/<id>`), copiando el código largo que aparece al final de la dirección.
+    En esta versión la pantalla pide el **código del paciente** y el **código del trabajador social** (una cadena larga de letras y números) en lugar de un buscador. Para obtenerlos, abra la ficha del paciente (*Admisión › Pacientes › Ver ficha*) y la del empleado (*SIGARH › Recursos Humanos › Empleados*) y copie la parte final de la dirección que aparece en la barra del navegador. Si le resulta difícil, pida apoyo a soporte técnico.
 
 Si el empleado no es trabajador social: *El profesional debe tener profesión Trabajador Social (TSO) registrada*. Si el paciente no existe: *Paciente no encontrado*.
 
